@@ -1,9 +1,6 @@
 import  ReactDOM  from "react-dom";
+import App from "./App";
 
-function Teste() {
-    return(
-        <div>Olá mundo</div>
-    )
-}
 
-ReactDOM.render(Teste(),document.querySelector(".root"))
+
+ReactDOM.render(<App/>,document.querySelector(".root"))
