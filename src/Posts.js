@@ -12,15 +12,18 @@ function Post(props) {
         if (preenchido === "sCurtida") {
             setHeart("Curtida")
             setPre("heart")
+            setQuantidade(0.001)
         }else{
             setHeart("sCurtida")
             setPre("heart-outline")
+            setQuantidade(0)
         }
     }
 
     const [bookMa, setBook] = React.useState("bookmark-outline")
     const [preenchido, setHeart] = React.useState("sCurtida")
     const [preenchido2, setPre] = React.useState("heart-outline")
+    const [quantidade,setQuantidade]=React.useState(0)
     return (
         <div class="post">
             <div class="topo">
@@ -52,7 +55,7 @@ function Post(props) {
                 <div class="curtidas">
                     <img src={props.curtidaPrincipal} />
                     <div class="texto">
-                        Curtido por <strong>{props.ultimaCurtida}</strong> e <strong>{props.ultimasCurtidas}</strong>
+                        Curtido por <strong>{props.ultimaCurtida}</strong> e <strong>outras {(props.ultimasCurtidas + quantidade).toFixed(3)} pessoas</strong>
                     </div>
                 </div>
             </div>
@@ -68,7 +71,7 @@ export default function Posts(props) {
             conteudo: "assets/img/gato-telefone.svg",
             perfilCurtida: "assets/img/respondeai.svg",
             nomeCurtida: "respondeai",
-            qtdcurtidas: "outras 101.523 pessoas",
+            qtdcurtidas: 101.523 ,
         },
         {
             perfil: "assets/img/barked.svg",
@@ -76,7 +79,7 @@ export default function Posts(props) {
             conteudo: "assets/img/dog.svg",
             perfilCurtida: "assets/img/adorable_animals.svg",
             nomeCurtida: "adorable_animals",
-            qtdcurtidas: "outras 99.159 pessoas",
+            qtdcurtidas: 99.159 ,
         }
     ]
 
