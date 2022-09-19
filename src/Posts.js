@@ -1,4 +1,26 @@
+import React from 'react';
 function Post(props) {
+
+    function salvar() {
+        if(bookMa==="bookmark-outline"){
+        setBook("bookmark")
+    }else{
+        setBook("bookmark-outline")
+    }
+    }
+    function preencher() {
+        if (preenchido === "sCurtida") {
+            setHeart("Curtida")
+            setPre("heart")
+        }else{
+            setHeart("sCurtida")
+            setPre("heart-outline")
+        }
+    }
+
+    const [bookMa, setBook] = React.useState("bookmark-outline")
+    const [preenchido, setHeart] = React.useState("sCurtida")
+    const [preenchido2, setPre] = React.useState("heart-outline")
     return (
         <div class="post">
             <div class="topo">
@@ -12,18 +34,18 @@ function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.imagemConteudo} />
+                <img onClick={preencher} src={props.imagemConteudo} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon onClick={preencher} class={preenchido} name={preenchido2}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon onClick={salvar} name={bookMa}></ion-icon>
                     </div>
                 </div>
 

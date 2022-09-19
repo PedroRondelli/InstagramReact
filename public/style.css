@@ -28,6 +28,12 @@ body {
 .navbar ion-icon, .navbar img {
   cursor: pointer;
 }
+.sCurtida{
+  color:unset;
+}
+.Curtida{
+  color:red;
+}
 
 .navbar .container {
   width: 100%;
